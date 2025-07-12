@@ -1,0 +1,18 @@
+<!-- src/app/components/helper-list/helper-list.component.html -->
+<div class="helpers-container">
+    <div class="header">
+      <h2>Helpers</h2>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Name, Employee ID, Phone" (input)="onSearch($event)">
+      </mat-form-field>
+      <span>7 helpers</span>
+      <app-button label="Add Helper" (onClick)="onAddHelper()"></app-button>
+    </div>
+    <div class="helper-list">
+      <div *ngFor="let helper of helpers" class="helper-item">
+        <span [ngClass]="{'active': helper.name === 'aasdfiroz'}">{{ helper.name }}</span>
+        <span>{{ helper.role }}</span>
+        <span>{{ helper.households }} Households</span>
+      </div>
+    </div>
+  </div>
