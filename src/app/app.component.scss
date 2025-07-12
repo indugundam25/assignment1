@@ -26,4 +26,32 @@ h1 {
   flex: 2 1 67%;
   background: #fff;
   overflow-y: auto;
+  padding: 32px 40px;
+}
+.helper-details {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fafbfc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.helper-details.empty {
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1.2em;
+  min-height: 200px;
+}
+.avatar-preview {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
 } 

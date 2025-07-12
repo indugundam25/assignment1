@@ -12,4 +12,23 @@ mat-form-field {
 }
 button[type="submit"] {
   margin-top: 12px;
+}
+.photo-upload {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.avatar-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+.gender-group {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 } 

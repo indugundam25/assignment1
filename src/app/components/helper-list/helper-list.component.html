@@ -1,11 +1,14 @@
 <div class="helper-list">
-  <h2>Helpers</h2>
+  <div class="header">
+    <span>Helpers</span>
+    <button mat-raised-button color="primary" (click)="addHelper.emit()">+ Add Helper</button>
+  </div>
   <ul>
-    <li *ngFor="let helper of helpers">
+    <li *ngFor="let helper of helpers"
+        [class.selected]="helper._id === selectedHelperId"
+        (click)="selectHelper.emit(helper._id)">
       <div class="name">{{ helper.name }}</div>
       <div class="role">{{ helper.role }}</div>
-      <div class="employee-id" *ngIf="helper.employeeId">ID: {{ helper.employeeId }}</div>
-      <div class="mobile-no" *ngIf="helper.mobileNo">Mobile: {{ helper.mobileNo }}</div>
     </li>
   </ul>
 </div> 

@@ -1,8 +1,32 @@
 <div class="main-layout">
   <div class="left-panel">
-    <app-helper-list [helpers]="(helpers$ | async) ?? []"></app-helper-list>
+    <app-helper-list
+      [helpers]="helpers"
+      [selectedHelperId]="selectedHelperId"
+      (selectHelper)="onSelectHelper($event)"
+      (addHelper)="onAddHelper()"
+    ></app-helper-list>
   </div>
   <div class="right-panel">
-    <app-helper-form></app-helper-form>
+    <ng-container *ngIf="addMode; else details">
+      <app-helper-form (helperAdded)="onHelperAdded()"></app-helper-form>
+    </ng-container>
+    <ng-template #details>
+      <ng-container *ngIf="selectedHelper; else noSelection">
+        <div class="helper-details">
+          <img *ngIf="selectedHelper.photoUrl" [src]="selectedHelper.photoUrl" class="avatar-preview" alt="Avatar">
+          <h2>{{ selectedHelper.name }}</h2>
+          <div><b>Type of Service:</b> {{ selectedHelper.role }}</div>
+          <div><b>Organization:</b> {{ selectedHelper.organization }}</div>
+          <div><b>Languages:</b> {{ selectedHelper.languages.join(', ') }}</div>
+          <div><b>Gender:</b> {{ selectedHelper.gender }}</div>
+          <div><b>Phone:</b> {{ selectedHelper.phone }}</div>
+          <div><b>Email:</b> {{ selectedHelper.email }}</div>
+        </div>
+      </ng-container>
+      <ng-template #noSelection>
+        <div class="helper-details empty">Select a helper to view details</div>
+      </ng-template>
+    </ng-template>
   </div>
 </div> 
