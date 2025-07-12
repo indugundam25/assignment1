@@ -1,0 +1,11 @@
+<div class="helper-list">
+  <h2>Helpers</h2>
+  <ul>
+    <li *ngFor="let helper of helpers">
+      <div class="name">{{ helper.name }}</div>
+      <div class="role">{{ helper.role }}</div>
+      <div class="employee-id" *ngIf="helper.employeeId">ID: {{ helper.employeeId }}</div>
+      <div class="mobile-no" *ngIf="helper.mobileNo">Mobile: {{ helper.mobileNo }}</div>
+    </li>
+  </ul>
+</div> 

@@ -1,0 +1,8 @@
+<div class="main-layout">
+  <div class="left-panel">
+    <app-helper-list [helpers]="(helpers$ | async) ?? []"></app-helper-list>
+  </div>
+  <div class="right-panel">
+    <app-helper-form></app-helper-form>
+  </div>
+</div> 

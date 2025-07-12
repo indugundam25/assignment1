@@ -1,0 +1,22 @@
+<div class="helper-form">
+  <h2>Add Helper</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Role</mat-label>
+      <input matInput [(ngModel)]="role" name="role" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Employee ID</mat-label>
+      <input matInput [(ngModel)]="employeeId" name="employeeId">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Mobile No</mat-label>
+      <input matInput [(ngModel)]="mobileNo" name="mobileNo">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add Helper</button>
+  </form>
+</div> 
